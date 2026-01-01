@@ -1,0 +1,29 @@
+potential    nep.txt
+velocity     300   #(Test the thermal conductivity at temperatures ranging from 200 K to 500 K separately.)
+
+minimize fire 1e-8 50000
+
+ensemble npt_scr 300 300 100 0 0 0 0 0 0 200 100 100 100 100 100 1000
+time_step    1 
+#dump_thermo  10000
+#dump_position 100000        
+run          5000000
+
+ensemble     nvt_lan 300 300 100
+#fix          0
+time_step    1 
+#dump_thermo  10000
+#dump_position 100000        
+run          5000000
+
+ensemble     heat_lan 300 100 15 1 6
+fix          0
+compute      0 10 100 temperature
+#dump_position 100000
+#dump_thermo  10000
+run          10000000
+
+
+
+
+

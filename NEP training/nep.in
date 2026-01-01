@@ -1,0 +1,14 @@
+type		3 Bi Fe O
+version         4
+cutoff          8 5
+#n_max           4 4
+#basis_size      8 8
+neuron	        30
+lambda_1	0
+#lambda_2	0.1
+lambda_e        2.0
+#lambda_f        1.0
+#lambda_v        0.1
+batch		101000
+#population      50
+generation	500000
